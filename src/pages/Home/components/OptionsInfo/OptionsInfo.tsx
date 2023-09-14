@@ -3,6 +3,7 @@ import tea from "../../../../images/icons/local_cafe.png";
 import shipping from "../../../../images/icons/local_shipping.png";
 import redeem from "../../../../images/icons/redeem.png";
 import sell from "../../../../images/icons/sell.png";
+
 export default function OptionsInfo() {
   return (
     <div className="options-info">

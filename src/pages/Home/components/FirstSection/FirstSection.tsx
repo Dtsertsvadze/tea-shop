@@ -1,5 +1,5 @@
 import "./FirstSection.css";
-import LandingImage from "../../../../images/Landing Main Image.png";
+import LandingImage from "../../../../images/Landing Main Image.webp";
 export default function FirstSection() {
   return (
     <section className="first-section">
