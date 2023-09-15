@@ -4,9 +4,9 @@ import image2 from "../../../../images/products/aromas.png";
 
 const LastBlog = () => {
   return (
-    <div className="blog-container">
+    <div className="blog-container ">
       <h1 className="blog-container__heading">Last blog posts</h1>
-      <div className="content-wrapper">
+      <div className="content-wrapper container">
         <div className="content">
           <div className="content-img__wrapper">
             <img className="content-img" src={image1} />

@@ -5,10 +5,10 @@ export default function Collections() {
     <section className="collections">
       <h1>Our Collections</h1>
       <div className="collection-list container">
-        {CollectionsAPI.map((e) => (
-          <div className="collection">
-            <img src={e.image} alt="" />
+        {CollectionsAPI.map((e, i) => (
+          <div className="collection" key={i}>
             <p>{e.title}</p>
+            <img src={e.image} alt="" />
           </div>
         ))}
       </div>
