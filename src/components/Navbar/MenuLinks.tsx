@@ -1,8 +1,8 @@
 import "./MenuLinks.css";
 
-import searchicon from "../../../../images/icons/Search.png";
-import profileIcon from "../../../../images/icons/Person.png";
-import cartIcon from "../../../../images/icons/local_shipping.png";
+import searchicon from "../../images/icons/Search.png";
+import profileIcon from "../../images/icons/Person.png";
+import cartIcon from "../../images/icons/local_shipping.png";
 
 interface MenuLinksInterface {
   openedMenu: boolean;
