@@ -55,7 +55,7 @@ const Navbar = () => {
           <img src={searchicon} />
         </div>
         <div className="icon">
-          <Link to=''>
+          <Link to="/login">
             <img src={profileIcon} />
           </Link>
         </div>
