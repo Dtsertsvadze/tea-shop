@@ -8,13 +8,20 @@ import Home from "./pages/Home/Home";
 import Cart from "./components/cart/Cart";
 import Navbar from "./components/Navbar/Navbar";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Product from "./pages/Product/Product";
 import { MyContextProvider } from "./API/Context";
 import ScrollToTop from "./components/ScrollToTop";
 import Login from "./pages/Login/Login";
+import { useEffect } from "react";
 
 function App() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/");
+  }, []);
+
   return (
     <MyContextProvider>
       <ScrollToTop />
