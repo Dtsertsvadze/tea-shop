@@ -1,3 +1,6 @@
+.delivery {
+  padding-bottom: 200px;
+}
 .delivery .delivery-box {
   display: flex;
   justify-content: space-between;

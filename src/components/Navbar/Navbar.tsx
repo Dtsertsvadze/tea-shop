@@ -4,25 +4,34 @@ import searchicon from "../../images/icons/Search.png";
 import profileIcon from "../../images/icons/Person.png";
 import cartIcon from "../../images/icons/local_shipping.png";
 import MenuBurger from "./MenuBurger";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MenuLinks from "./MenuLinks";
+import { Link } from "react-router-dom";
+import { MyContext } from "../../API/Context";
 
 const Navbar = () => {
-  const [openedMenu, setOpenedMenu] = useState(false);
+  const [openedMenu, setOpenedMenu] = useState(true);
 
   const menuOpenHandler = () => {
     setOpenedMenu(!openedMenu);
   };
+
+  const ctx = useContext(MyContext);
+
   return (
     <nav>
       <div className="nav-logo">
         <img className="nav-logo__icon" src={logo} />
-        <h1 className="nav-logo__name">brandname</h1>
+        <h1 className="nav-logo__name">
+          <Link to="/">brandname</Link>
+        </h1>
       </div>
       <div className="links-wrapper">
         <ul className="nav-links">
           <li>
-            <p className="link">tea collections</p>
+            <Link to="/collections" className="link">
+              <p>tea collections</p>
+            </Link>
           </li>
           <li>
             <p className="link">accessories</p>
@@ -36,15 +45,21 @@ const Navbar = () => {
         </ul>
       </div>
       <MenuBurger openedMenu={openedMenu} setOpenedMenu={menuOpenHandler} />
-      <MenuLinks openedMenu={openedMenu} />
+      <MenuLinks
+        onClose={menuOpenHandler}
+        onCartOpen={() => ctx?.cartOpenHandler()}
+        openedMenu={openedMenu}
+      />
       <div className="nav-actions">
         <div className="icon">
           <img src={searchicon} />
         </div>
         <div className="icon">
-          <img src={profileIcon} />
+          <Link to=''>
+            <img src={profileIcon} />
+          </Link>
         </div>
-        <div className="icon">
+        <div onClick={() => ctx?.cartOpenHandler()} className="icon">
           <img src={cartIcon} />
         </div>
       </div>

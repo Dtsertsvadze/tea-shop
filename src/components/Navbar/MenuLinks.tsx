@@ -3,12 +3,15 @@ import "./MenuLinks.css";
 import searchicon from "../../images/icons/Search.png";
 import profileIcon from "../../images/icons/Person.png";
 import cartIcon from "../../images/icons/local_shipping.png";
+import { Link } from "react-router-dom";
 
 interface MenuLinksInterface {
   openedMenu: boolean;
+  onClose: React.MouseEventHandler<HTMLLIElement>;
+  onCartOpen: React.MouseEventHandler<HTMLDivElement> | undefined;
 }
 
-const MenuLinks = ({ openedMenu }: MenuLinksInterface) => {
+const MenuLinks = ({ openedMenu, onClose, onCartOpen }: MenuLinksInterface) => {
   return (
     <div
       className="nav-menu__links"
@@ -21,13 +24,15 @@ const MenuLinks = ({ openedMenu }: MenuLinksInterface) => {
         <div className="icon">
           <img src={profileIcon} alt="Profile Icon" />
         </div>
-        <div className="icon">
+        <div onClick={onCartOpen} className="icon">
           <img src={cartIcon} alt="Cart Icon" />
         </div>
       </div>
       <ul className="links">
-        <li>
-          <p className="link">tea collections</p>
+        <li onClick={onClose}>
+          <Link to="/collections">
+            <p className="link">tea collections</p>
+          </Link>
         </li>
         <li>
           <p className="link">accessories</p>

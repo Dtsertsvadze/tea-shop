@@ -1,17 +1,12 @@
 interface BurgerInterface {
   openedMenu: boolean;
-  setOpenedMenu: Function;
+  setOpenedMenu: React.MouseEventHandler<HTMLDivElement>;
 }
 const MenuBurger = ({ openedMenu, setOpenedMenu }: BurgerInterface) => {
-    
-  const menuOpenHandler = () => {
-    setOpenedMenu(!openedMenu);
-  };
-
   return (
     <div
       className="nav-menu"
-      onClick={menuOpenHandler}
+      onClick={setOpenedMenu}
       style={openedMenu ? { borderRadius: "10px" } : {}}
     >
       <div

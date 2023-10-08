@@ -20,8 +20,14 @@
   max-width: 100%;
 }
 .first-section .fsec-flex .fsec-rightside button {
-  color: #fff;
   background-color: #282828;
+}
+.first-section .fsec-flex .fsec-rightside button a {
+  text-decoration: none;
+  color: white;
+}
+.first-section .fsec-flex .fsec-rightside button:hover {
+  background-color: #333333;
 }
 
 @media screen and (max-width: 1350px) {
@@ -42,6 +48,7 @@
   .first-section .fsec-flex .fsec-rightside button {
     display: block;
     margin: auto;
+    text-decoration: none;
   }
   .first-section .fsec-flex img {
     position: relative;

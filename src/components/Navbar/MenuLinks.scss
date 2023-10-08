@@ -9,7 +9,7 @@
   transition: 0.5s;
   gap: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
+  z-index: 2;
   .actions {
     display: flex;
     flex-direction: row;
@@ -24,6 +24,9 @@
     flex-direction: column;
     gap: 20px;
     text-transform: uppercase;
+    a {
+      all: unset;
+    }
     .link {
       text-transform: uppercase;
       transition: 0.4s;

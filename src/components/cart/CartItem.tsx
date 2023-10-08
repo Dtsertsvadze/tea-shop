@@ -1,25 +1,56 @@
 import "./CartItem.css";
-import img from "../../images/products/tea/tea1.webp";
+
+import { useContext } from "react";
+import { MyContext } from "../../API/Context";
 
 const CartItem = () => {
-  return (
-    <div className="cart-item">
-      <img src={img} />
+  const ctx = useContext(MyContext);
+  console.log(ctx?.bagList);
+
+  const handleIncrement = (item: any) => {
+    ctx?.addToCarthandler(item);
+  };
+
+  const handleDecrement = (id: number) => {
+    ctx?.decrementItemAmount(id);
+  };
+
+  const cartItem = ctx?.bagList.map((i, idx: number) => (
+    <div key={idx} className="cart-item">
+      <img src={i.img} />
       <div className="cart-item__content">
         <div>
-          <p>Ceylon Ginger Cinnamon</p>
-          <p>Chai Tea / 50g</p>
-          <button className="cart-item__content-button">REMOVE</button>
-          <p className="cart-item__content-span">$4.90</p>
+          <p>{i.species}</p>
+          <p>Chai Tea / {i.servingSize}</p>
+          <button
+            onMouseEnter={() => console.log("hovered")}
+            className="cart-item__content-button"
+            onClick={() => ctx?.removeFromCartHandler(i.id)}
+          >
+            REMOVE
+          </button>
+          <p className="cart-item__content-span">${i.price}</p>
         </div>
         <div className="cart-item__content-actions">
-          <button className="cart-item__content-actions-button">-</button>
-          <p>1</p>
-          <button className="cart-item__content-actions-button">+</button>
+          <button
+            onClick={() => handleDecrement(i.id)}
+            className="cart-item__content-actions-button"
+          >
+            -
+          </button>
+          <p>{i.amount}</p>
+          <button
+            onClick={() => handleIncrement(i)}
+            className="cart-item__content-actions-button"
+          >
+            +
+          </button>
         </div>
       </div>
     </div>
-  );
+  ));
+
+  return cartItem;
 };
 
 export default CartItem;

@@ -1,5 +1,6 @@
 import "./FirstSection.css";
 import LandingImage from "../../../../images/Landing Main Image.webp";
+import { Link } from "react-router-dom";
 export default function FirstSection() {
   return (
     <section className="first-section">
@@ -14,7 +15,9 @@ export default function FirstSection() {
               amet consectetur. Orci nibh nullam risus adipiscing odio. Neque
               lacus nibh eros in.
             </p>
-            <button>BROWES TEAS</button>
+            <button>
+              <Link to="/collections">BROWES TEAS</Link>
+            </button>
           </div>
         </div>
       </div>
