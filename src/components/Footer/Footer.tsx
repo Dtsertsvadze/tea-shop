@@ -1,9 +1,6 @@
 import { FooterAPI } from "../../API/FooterAPI";
 import "./Footer.css";
 export default function Footer() {
-  const locationInfo = (icons: any, info: any) => {
-    return <div className="location-info"></div>;
-  };
   return (
     <footer>
       <div className="footer-wrapper container">
