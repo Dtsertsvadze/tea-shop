@@ -15,6 +15,7 @@ const Purchase = () => {
 
   console.log(totalAmount);
 
+
   return (
     <div className="container">
       <PurchasePath />
@@ -22,7 +23,7 @@ const Purchase = () => {
         <PurchaseCart />
         <OrderCard
           subtotal={ctx?.totalAmount}
-          totalAmount={parseInt(totalAmount.toFixed(2))}
+          totalAmount={totalAmount}
           path="/payment/delivery"
           buttonText="Check Out"
         />

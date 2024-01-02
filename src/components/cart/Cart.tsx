@@ -72,7 +72,7 @@ const Cart: React.FC<CartProps> = () => {
               <span>
                 $
                 {ctx?.totalAmount
-                  ? (ctx.totalAmount + deliveryFee).toFixed(2)
+                  ? (ctx.totalAmount + deliveryFee).toFixed()
                   : 0}
               </span>
             </p>

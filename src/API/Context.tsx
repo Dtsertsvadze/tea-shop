@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useMemo } from "react";
 
 export interface CartItem {
   id: number;
@@ -69,9 +69,11 @@ export const MyContextProvider = ({ children }: any) => {
     setOpenedCart(!openedCart);
   };
 
-  const totalAmount = bagList
-    .map((i) => (i.amount ? i.amount * i.price : 0))
-    .reduce((a, b) => a || 0 + b || 0, 0);
+  const totalAmount = useMemo(() => {
+    return bagList
+      .map((item) => (item.amount ? item.amount * item.price : 0))
+      .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  }, [bagList]);
 
   return (
     <MyContext.Provider

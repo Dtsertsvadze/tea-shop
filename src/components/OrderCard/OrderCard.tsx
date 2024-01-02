@@ -22,7 +22,7 @@ const OrderCard = ({
         <div className="order-summary-container__checkout-container">
           <h1 className="container-heading">Order Summary</h1>
           <p className="container-paragraph">
-            Subtotal<span>${subtotal}</span>
+            Subtotal<span>${subtotal?.toFixed(2)}</span>
           </p>
           <p className="container-paragraph">
             Delivery<span>$3.95</span>
@@ -30,7 +30,7 @@ const OrderCard = ({
         </div>
         <div>
           <p className="container-paragraph">
-            Total<span>${totalAmount}</span>
+            Total<span>${totalAmount?.toFixed(2)}</span>
           </p>
         </div>
         <div className="order-container">

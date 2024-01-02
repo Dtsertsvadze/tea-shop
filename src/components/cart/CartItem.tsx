@@ -5,7 +5,6 @@ import { MyContext } from "../../API/Context";
 
 const CartItem = () => {
   const ctx = useContext(MyContext);
-  console.log(ctx?.bagList);
 
   const handleIncrement = (item: any) => {
     ctx?.addToCarthandler(item);
